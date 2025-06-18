@@ -1,15 +1,23 @@
 import { Routes } from '@angular/router';
 import {LoginComponent} from "./pages/login/login.component";
+import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import { ProductosComponent } from './pages/productos/productos.component';
 
 export const routes: Routes = [
 
 // Solo Login en /login
   { path: 'login', component: LoginComponent },
 
-  // Solo Dashboard en /dashboard
-  { path: 'dashboard', component: DashboardComponent },
+  {
+    path: '',
+    component: DashboardLayoutComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'productos', component: ProductosComponent }
+    ]
+  },
 
-  // Cualquier otra ruta vuelve a /login
   { path: '**', redirectTo: 'login' }
 ];
