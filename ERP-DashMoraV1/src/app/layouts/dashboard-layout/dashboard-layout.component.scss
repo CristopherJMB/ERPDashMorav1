@@ -1,0 +1,32 @@
+/* dashboard-layout.component.scss */
+:host {
+  display: block; /* para que el componente respete su ancho completo */
+}
+
+.layout {
+  display: flex;       /* convierte .layout en un flex container */
+  height: 100vh;       /* ocupa toda la altura de la ventana */
+  margin: 0;           /* elimina márgenes indeseados */
+  padding: 0;          /* elimina padding indeseado */
+}
+
+app-sidebar {
+  flex: 0 0 250px;     /* ancho fijo de 250px, no se encoge ni crece */
+}
+
+.main-area {
+  flex: 1;             /* ocupa todo el espacio sobrante */
+  display: flex;
+  flex-direction: column; /* header arriba, content abajo */
+}
+
+app-header {
+  flex: 0 0 auto;      /* que no cambie de tamaño, altura fija del header */
+}
+
+.content {
+  flex: 1;             /* ocupa el espacio restante debajo del header */
+  overflow-y: auto;    /* scroll interno si el contenido es muy largo */
+  padding: 1.5rem;
+  background: #f5f7fa;
+}
