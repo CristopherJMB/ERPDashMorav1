@@ -1,4 +1,27 @@
+
+
 <div class="productos-container">
-  <h2>Productos</h2>
-  <!-- tabla aquí -->
+  <div class="header">
+    <h2>Productos</h2>
+    <button (click)="onAdd()">Agregar Producto</button>
+  </div>
+
+  <table class="productos-table">
+    <thead>
+      <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products$ | async">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>\${{p.price}}</td>
+        <td>{{p.stock}}</td>
+        <td>
+          <button (click)="onEdit(p)">✏️</button>
+          <button (click)="onDelete(p.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+

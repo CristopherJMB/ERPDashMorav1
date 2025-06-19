@@ -1,0 +1,35 @@
+.form-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
+  h2 { margin-bottom: 1rem; }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label { margin-top: 0.5rem; }
+    input, textarea {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    textarea { resize: vertical; }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button[type="submit"] { background: #6c63ff; color: #fff; }
+    button[type="button"] { background: #ccc; color: #333; }
+  }
+}
