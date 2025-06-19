@@ -7,21 +7,32 @@ import { ProductoFormComponent } from './pages/producto-form/producto-form.compo
 
 export const routes: Routes = [
 
-// Solo Login en /login
+// Solo Login en /login ruta publica
   { path: 'login', component: LoginComponent },
 
+  // Rutas internas con layout compartido
   {
     path: '',
     component: DashboardLayoutComponent,
     children: [
+      //Redirige la raiz al dashboard
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
+      //dashboard home
       { path: 'dashboard', component: DashboardComponent },
+
+      //Listado de productos
       { path: 'productos', component: ProductosComponent },
+
+      // Agregar un nuevo producto
       { path: 'productos/agregar', component: ProductoFormComponent},
+
+      //Editar un producto existente por Id
       { path: 'productos/editar/:id', component: ProductoFormComponent},
 
     ]
   },
 
+  //Cualquier otra ruta vuelve al login
   { path: '**', redirectTo: 'login' }
 ];

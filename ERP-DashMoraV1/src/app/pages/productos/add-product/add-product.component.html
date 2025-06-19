@@ -1,0 +1,16 @@
+<div class="form-container">
+  <h2>Agregar Producto</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Nombre</label>
+    <input formControlName="name" />
+    <label>Precio</label>
+    <input type="number" formControlName="price" />
+    <label>Stock</label>
+    <input type="number" formControlName="stock" />
+    <label>Descripción</label>
+    <textarea formControlName="description"></textarea>
+    <button type="submit" [disabled]="form.invalid">Crear</button>
+    <button type="button" (click)="router.navigate(['/productos'])">Cancelar</button>
+  </form>
+</div>
+
