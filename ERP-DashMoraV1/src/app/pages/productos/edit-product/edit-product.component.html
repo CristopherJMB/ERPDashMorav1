@@ -1,1 +1,9 @@
-<p>edit-product works!</p>
+<div class="form-container">
+  <h2>Editar Producto</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- mismos inputs que en add-product -->
+    <button type="submit" [disabled]="form.invalid">Actualizar</button>
+    <button type="button" (click)="router.navigate(['/productos'])">Cancelar</button>
+  </form>
+</div>
+
