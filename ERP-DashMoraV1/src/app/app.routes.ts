@@ -4,6 +4,10 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import { ProductosComponent } from './pages/productos/productos.component';
 import { ProductoFormComponent } from './pages/producto-form/producto-form.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
+import { VentasComponent } from './pages/ventas/ventas.component';
+import { IngresosComponent } from './pages/ingresos/ingresos.component';
+
 
 export const routes: Routes = [
 
@@ -23,6 +27,15 @@ export const routes: Routes = [
 
       //Listado de productos
       { path: 'productos', component: ProductosComponent },
+
+      //LIstado de ventas
+      { path: 'ventas', component: VentasComponent },
+
+      //Listado de clientes
+      { path: 'clientes', component: ClientesComponent },
+
+      //Ingresos
+      { path: 'ingresos', component: IngresosComponent} ,
 
       // Agregar un nuevo producto
       { path: 'productos/agregar', component: ProductoFormComponent},
