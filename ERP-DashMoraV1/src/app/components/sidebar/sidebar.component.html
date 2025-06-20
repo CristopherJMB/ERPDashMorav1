@@ -1,15 +1,15 @@
 <nav class="sidebar">
   <ul>
     <li>
-      <a routerLink="/dashboard" routerLinkActive="active">
+      <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]= "{exact : true}">
         <i class="icon" data-feather="home"></i>
-        Dashboard
+        <span>Dashboard</span>
       </a>
     </li>
     <li>
       <a routerLink="/productos" routerLinkActive="active">
         <i class="icon" data-feather="box"></i>
-        Productos
+        <span>Productos</span>
       </a>
     </li>
   </ul>
