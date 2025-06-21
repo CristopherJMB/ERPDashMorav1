@@ -1,0 +1,27 @@
+<div class="ventas-container">
+  <div class="header">
+    <h2>Ventas</h2>
+    <button (click)="onAdd()">➕ Agregar Venta</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Cliente</th><th>Fecha</th><th>Total</th><th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sales$ | async">
+        <td>{{ s.id }}</td>
+        <td>{{ s.client.name }}</td>
+        <td>{{ s.date | date:'shortDate' }}</td>
+        <td>\${{ s.total }}</td>
+        <td>
+          <button (click)="onEdit(s)">✏️</button>
+          <button (click)="onDelete(s.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

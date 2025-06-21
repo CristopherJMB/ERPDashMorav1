@@ -7,6 +7,10 @@ import { ProductoFormComponent } from './pages/producto-form/producto-form.compo
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { VentasComponent } from './pages/ventas/ventas.component';
 import { IngresosComponent } from './pages/ingresos/ingresos.component';
+import { ListSaleComponent } from './pages/ventas/list-sale/list-sale.component';
+import { AddSaleComponent } from './pages/ventas/add-sale/add-sale.component';
+import { EditSaleComponent } from './pages/ventas/edit-sale/edit-sale.component';
+
 
 
 export const routes: Routes = [
@@ -42,6 +46,10 @@ export const routes: Routes = [
 
       //Editar un producto existente por Id
       { path: 'productos/editar/:id', component: ProductoFormComponent},
+
+      { path: 'ventas',         component: ListSaleComponent },
+      { path: 'ventas/agregar', component: AddSaleComponent },
+      { path: 'ventas/editar/:id', component: EditSaleComponent },
 
     ]
   },

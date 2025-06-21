@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h2>Agregar Venta</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Cliente</label>
+    <select formControlName="clientId">
+      <option [ngValue]="null">-- Seleccionar --</option>
+      <option *ngFor="let c of clients" [ngValue]="c.id">{{c.name}}</option>
+    </select>
+
+    <label>Productos</label>
+    <select formControlName="productIds" multiple>
+      <option *ngFor="let p of products" [ngValue]="p.id">{{p.name}}</option>
+    </select>
+
+    <button type="submit" [disabled]="form.invalid">Crear Venta</button>
+    <button type="button" (click)="router.navigate(['/ventas'])">Cancelar</button>
+    <button type="button" (click)="cancel()">Cancelar</button>
+  </form>
+</div>
+
